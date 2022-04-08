@@ -1,0 +1,98 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <h:head>
+        <title>Registro veiculos: Peças</title>
+
+        <style>
+
+        </style>
+
+    </h:head>
+    <h:body>
+        <h1>PEÇAS E DESCRIÇÃO</h1>
+
+        <h:graphicImage value="folder/intro.png"></h:graphicImage>
+
+        <h:form>
+
+
+
+            <p:growl showDetail="true"/>
+
+            <p:panel header ="Cadastrar Peças" toggleable="false" closable="false" toggleSpeed="100" 
+                     closeSpeed="500"> 
+
+                <h:panelGrid columns="1">
+
+                    <p:outputLabel value ="Digite nome da Peça: "/> 
+                    <p:inputText id="inputNome" value= "#{pecaMenagedBean.peca.nome}" placeholder="Exemplo: Radiador" required="true" requiredMessage="O campo nome é obrigatório"/>
+
+
+                    <p:outputLabel value ="Digite o codigo: "/> 
+                    <p:inputText id="inputCodigo" value= "#{pecaMenagedBean.peca.id}" placeholder="Exemplo: OVW3978" required="true" requiredMessage="O campo codigo é obrigatório"/>
+
+
+                    <p:outputLabel value ="Digite a descrição: "/> 
+                    <p:inputText id="inputDescricao" value= "#{pecaMenagedBean.peca.descricao}" placeholder="Exemplo: Resfria o motor" required="true" requiredMessage="O campo Descrição é obrigatório"/>
+
+                </h:panelGrid>
+
+                <p:commandButton value="Cadastrar" update="@form"
+                                 actionListener="#{pecaMenagedBean.adicionarPeca()}"/> 
+
+                <br/>
+
+                <br/>
+                <br/>
+
+
+
+                <p:accordionPanel widgetVar="basic">
+                    <p:tab title="Registros">
+                        <p class="p-m-0">
+
+                        </p>
+                        <p:dataTable var="car" value="#{pecaMenagedBean.pecas}" emptyMessage="Nenhum Registro Encontrado">
+
+                            <f:facet name="Peças Registrados"></f:facet>
+
+                            <p:column headerText="Nome">
+
+                                <p:outputLabel value="#{car.nome}"/> 
+
+
+                            </p:column>
+
+                            <p:column headerText="Codigo">
+
+                                <p:outputLabel value="#{car.id}"/>
+
+                            </p:column>
+
+                            <p:column headerText="Descrição">
+
+                                <p:outputLabel value="#{car.descricao}"/>
+
+                            </p:column>
+
+                        </p:dataTable>
+                    </p:tab>
+
+
+                </p:accordionPanel>
+
+            </p:panel>
+
+            </h:form>
+            
+        <p:button value="Retornar a Página Inicial" href="index.xhtml"/>
+
+    </h:body>
+
+</html>
+

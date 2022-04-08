@@ -1,0 +1,67 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <h:head>
+        <title>Registro veiculos: Cadastrados</title>
+
+        <style>
+
+        </style>
+
+    </h:head>
+    <h:body>
+        <h1>VEÍCULOS CADASTRADOS</h1>
+
+        <h:graphicImage value="folder/consulta.png"></h:graphicImage>
+
+
+        <h:form>
+
+
+
+
+            <p:panel header ="Veículos Cadastrados" toggleable="false" closable="false" toggleSpeed="100" 
+                     closeSpeed="500"> 
+                
+                <p:dataTable var="car" value="#{carroManagerBean.carros}" emptyMessage="Nenhum Registro Encontrado">
+
+                    <f:facet name="Carros Registrados"></f:facet>
+
+                    <p:column headerText="Nome">
+
+                        <p:outputLabel value="#{car.nome}"/> 
+
+
+                    </p:column>
+
+                    <p:column headerText="Placa">
+
+                        <p:outputLabel value="#{car.placa}"/>
+
+                    </p:column>
+
+                    <p:column headerText="Valor">
+
+                        <p:outputLabel value="#{car.valor}"/>
+
+                    </p:column>
+
+                </p:dataTable>
+
+            </p:panel>
+
+            
+            <p:button value="Retornar a Página Inicial" href="index.xhtml"/>
+
+        </h:form>
+
+
+
+    </h:body>
+
+</html>
+
