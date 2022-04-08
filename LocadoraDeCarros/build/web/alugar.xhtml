@@ -1,0 +1,58 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui">
+
+    <h:head>
+        <title>www.locadoradecarro.com.br</title>
+
+        <style>
+
+        </style>
+
+    </h:head>
+    <h:body>
+        <h1>LOCADORA DE CARROS</h1>
+
+        <h:graphicImage value=""></h:graphicImage>
+
+
+        <h:form>
+            <p:growl showDetail="true"/>
+
+
+                <p:panel id="panelMarca" header ="Cadastrar Aluguel de Carro" toggleable="false" closable="false" toggleSpeed="100" 
+                         closeSpeed="500"> 
+
+                    <p:panelGrid columns="2">
+                        <p:outputLabel value="Digite o nome do Locatario:"/>
+                        <p:inputText value="#{aluguelManagerBean.aluguel.locatario.nome}"/>
+
+                        <p:outputLabel value="Digite a Descrição da Data de aluguel:"/>
+                        <p:inputText value="#{aluguelManagerBean.aluguel.dataAluguel}"/>
+                        
+                        <p:outputLabel value="Digite a Descrição da Data de devolver:"/>
+                        <p:inputText value="#{aluguelManagerBean.aluguel.dataDevolucao}"/>
+                        
+
+
+                    </p:panelGrid>
+
+                    <p:commandButton value="Salvar" actionListener="#{aluguelManagerBean.salvar()}" update="@form"/>
+                    <p:button value="Voltar" href="intro.xhtml"/>
+
+                </p:panel>
+
+
+
+
+
+        </h:form>
+
+
+
+    </h:body>
+
+</html>
+
