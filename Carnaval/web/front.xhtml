@@ -1,0 +1,88 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <h:head>
+        <title>www.MaisCarnaval.com.br</title>
+
+        <style>
+            .tadiwa{
+                background-image: url("folder/imagemback.png");
+            }
+            .classe2{
+                background-image: url("folder/imagem1.jpg");
+            }
+            .classe3{
+                background-image: url("folder/imagem2.jpg");
+            }
+            .classe4{
+                background-image: url("folder/imagem3.jpg");
+            }
+
+        </style>
+
+    </h:head>
+    <h:body styleClass="classe3">
+        <h1>CONTROLE DE FESTAS CARNAVAL</h1>
+
+        <h:graphicImage value="folder/imageminicial.png"></h:graphicImage>
+
+
+        <h:form>
+            <p:growl showDetail="true"/>
+
+
+            <p:panel id="panelmenufront" header ="Base de Dados Front" toggleable="false" closable="false" toggleSpeed="100" 
+                     closeSpeed="500" styleClass="tadiwa"> 
+                <p:button value="Geral" href="relatorio.xhtml" icon="ui-icon-left" />
+
+            </p:panel>
+
+            <p:dataTable id="rapa3" var="person" value="#{pessoaManagerBean.pessoas3}" emptyMessage="Sem pessoas">
+
+                <p:column headerText="Ação">
+                    <p:commandButton icon="ui-icon-trash"
+                                     value="Remover" 
+                                     actionListener="#{pessoaManagerBean.removerPessoa(person)}"
+                                     update="rapa3" process="@this"/>
+                </p:column>
+
+                <p:column headerText="Nome">
+                    <p:outputLabel value="#{person.nome}"/>
+                </p:column>
+
+                <p:column headerText="CPF">
+                    <p:outputLabel value="#{person.CPF}"/>
+                </p:column>
+
+                <p:column headerText="Sexo">
+                    <p:outputLabel value="#{person.sexo}"/>
+                </p:column>
+
+                <p:column headerText="Setor">
+                    <p:outputLabel value="#{person.setor}"/>
+                </p:column>
+
+            </p:dataTable> 
+
+
+            <br/>
+            <center>
+                <p:button value="Pagina Inicial" href="intro.xhtml" icon="ui-icon-left" />
+            </center>
+
+            <br/>
+
+
+        </h:form>
+
+
+
+
+    </h:body>
+
+</html>
+

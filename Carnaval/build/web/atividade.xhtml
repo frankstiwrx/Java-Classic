@@ -1,0 +1,106 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <h:head>
+        <title>www.MaisCarnaval.com.br</title>
+
+        <style>
+            .tadiwa{
+                background-image: url("folder/imagemback.png");
+            }
+            .classe2{
+                background-image: url("folder/imagem1.jpg");
+            }
+            .classe3{
+                background-image: url("folder/imagem2.jpg");
+            }
+            .classe4{
+                background-image: url("folder/imagem3.jpg");
+            }
+        </style>
+
+    </h:head>
+    <h:body styleClass="classe3">
+        <h1>CONTROLE DE FESTAS CARNAVAL</h1>
+
+        <h:graphicImage value="folder/imageminicial.png"></h:graphicImage>
+
+
+        <h:form>
+            <p:growl showDetail="true"/>
+
+
+            <p:panel id="panelmenufront" header ="Entrar e Sair" toggleable="false" closable="false" toggleSpeed="100" 
+                     closeSpeed="500" styleClass="tadiwa"> 
+                <p:accordionPanel widgetVar="basic">
+                    <p:tab title="Entrada">
+                        <p class="p-m-0">
+                            <center>
+                                <p:outputLabel value="Digite o nome da Pessoa: "/>
+                                <p:inputText value="#{pessoaManagerBean.pessoa.nome}" required="true" requiredMessage="Tem que Preecher Sim"/>
+                            </center>
+
+                            <br/>
+
+                            <center>
+                                <p:outputLabel value="Digite o CPF da Pessoa: "/>
+                                <p:inputText value="#{pessoaManagerBean.pessoa.CPF}" required="true" requiredMessage="Tem que Preecher Sim"/>
+
+                            </center>
+
+                            <br/>
+
+                            <center>
+                                <div class="p-field p-col-12 p-md-4">
+                                    <p:outputLabel value="Sexo"/>
+                                    <p:selectOneMenu id="labeledSexo" value="#{pessoaManagerBean.pessoa.sexo}" label="Always Show Label"  required="true" requiredMessage="Tem que Preecher Sim">
+                                        <f:selectItem   itemLabel="Selecione" itemValue="#{null}"/>
+                                        <f:selectItems value="#{pessoaManagerBean.sexo}" />
+                                    </p:selectOneMenu>
+                                </div>
+
+                            </center>
+
+                            <br/>
+
+                            <center>
+                                <div class="p-field p-col-12 p-md-4">
+                                    <p:outputLabel value="Setor"/>
+                                    <p:selectOneMenu id="labeledSetor" value="#{pessoaManagerBean.pessoa.setor}" label="Always Show Label" required="true" requiredMessage="Tem que Preecher Sim">
+                                        <f:selectItem   itemLabel="Selecione" itemValue="#{null}"/>
+                                        <f:selectItems value="#{pessoaManagerBean.setor}"/>
+                                    </p:selectOneMenu>
+                                </div>
+
+
+                            </center>
+                        </p>
+
+                        <center><p:commandButton value="verificar" icon="ui-icon-search" actionListener="#{pessoaManagerBean.salvar(pessoaManagerBean.pessoa)}" update="@form" /></center>
+
+                    </p:tab>
+
+                    
+
+                </p:accordionPanel>
+
+
+            </p:panel>
+
+            <br/>
+            <center><p:button value="Pagina Inicial" href="intro.xhtml" icon="ui-icon-left"/></center> 
+
+        </h:form>
+
+        <br/>
+        
+        
+
+    </h:body>
+
+</html>
+

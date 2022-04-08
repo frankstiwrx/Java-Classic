@@ -1,0 +1,83 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui">
+
+    <h:head>
+        <title>www.MaisCarnaval.com.br</title>
+
+        <style>
+            .tadiwa{
+                background-image: url("folder/imagemback.png");
+            }
+            .classe2{
+                background-image: url("folder/imagem1.jpg");
+            }
+            .classe3{
+                background-image: url("folder/imagem2.jpg");
+            }
+            .classe4{
+                background-image: url("folder/imagem3.jpg");
+            }
+            
+        </style>
+
+
+    </h:head>
+    <h:body styleClass="classe3">
+
+        <h1>CONTROLE DE FESTAS CARNAVAL</h1>
+
+
+
+        <h:graphicImage value="folder/imageminicial.png"></h:graphicImage>
+
+
+        <h:form>
+            <p:growl showDetail="true"/>
+
+
+
+
+            <p:panel id="panelmenu" header ="Opções" toggleable="false" closable="false" toggleSpeed="100" 
+                     closeSpeed="500" styleClass="tadiwa"> 
+                <p:accordionPanel widgetVar="basic" >
+                    <p:tab title="Registrar Entrada">
+                        <p class="p-m-0">
+
+                            Ferramentas que dominam a entrada de pessoas do banco de dados do controle.
+                            <br/>
+                            <center><p:button value="Adicionar" href="atividade.xhtml" icon="ui-icon-plus" /></center>
+
+                        </p>
+                    </p:tab>
+                    <p:tab title="Consulta de Atividade">
+                        <p class="p-m-0">
+                            Ferramentas que mostram a atividade com registros de entrada e saída do banco de dados.
+                            <br/>
+                            <center><p:button value="Registro" href="relatorio.xhtml" icon="ui-icon-disk"/></center>
+                        </p>
+                    </p:tab>
+
+                </p:accordionPanel>
+
+
+            </p:panel>
+
+
+
+
+
+        </h:form>
+
+        <br/>
+
+
+
+
+
+    </h:body>
+
+</html>
+
