@@ -1,0 +1,78 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <h:head>
+        <title>Sistema de Universidade</title>
+
+        <style>
+            .planoinicial{
+                background-image: url("imagens/536245.jpg");
+            }
+            
+            .personalizacaobotao{
+                background-image: url("imagens/personalizacao.jpg");
+            }
+        </style>
+
+    </h:head>
+
+    <h:body styleClass="">
+
+        <h1>Sistema Universitário</h1>
+
+        <h:graphicImage value="imagens/ilustracao.jpg"></h:graphicImage>
+
+        <h:form>
+
+            <p:panel header="Gerenciamento de Alunos">
+
+                <em>Ferramentas para gerenciar alunos.</em>
+
+                <center>
+                    <p:button value="Cadastrar Aluno" href="formularioaluno.xhtml" icon="ui-icon-plus"/>
+                    <p:button value="Consultar Aluno" href="registroaluno.xhtml" icon="ui-icon-search"/>
+                </center>
+
+            </p:panel>
+
+
+            <p:panel header="Gerenciamento de Professores">
+
+                <em>Ferramentas para gerenciar professores.</em>
+
+                <center>
+                    <p:button value="Cadastrar Professor" href=".xhtml" icon="ui-icon-plus" />
+                    <p:button value="Consultar Professor" href=".xhtml" icon="ui-icon-search" />
+                </center>
+
+            </p:panel>
+
+            <p:panel header="Gerenciamento de Cursos">
+
+                <em>Ferramentas para gerenciar cursos.</em>
+
+                <center>
+                    <p:button value="Cadastrar Curso" href=".xhtml" icon="ui-icon-plus" />
+                    <p:button value="Consultar Curso" href=".xhtml" icon="ui-icon-search" />
+                </center>
+
+            </p:panel>
+
+
+
+
+
+        </h:form>
+
+
+    </h:body>
+
+
+
+
+</html>
+

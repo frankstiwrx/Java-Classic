@@ -1,0 +1,97 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <h:head>
+        <title>Cadastro de Alunos</title>
+    </h:head>
+
+    <h:body>
+        <h1>Sistema Universitário</h1>
+
+        <h:graphicImage value="imagens/ilustracao.jpg"></h:graphicImage>
+
+
+        <h:form>
+            <p:growl showDetail="true"/>
+
+
+            <p:panel  header ="Formulário"> 
+
+                <center>
+                    <p:outputLabel value="Digite o nome do aluno: "/>
+                    <p:inputText value="#{alunoManagerBean.aluno.nome}" required="true" requiredMessage="Tem que Preecher Sim"/>
+                </center>
+
+                <br/>
+
+                <center>
+                    <p:outputLabel value="Digite o cpf do aluno: "/>
+                    <p:inputText value="#{alunoManagerBean.aluno.cpf}" required="true" requiredMessage="Tem que Preecher Sim"/>
+
+                </center>
+
+                <br/>
+
+                <center>
+                    <div class="p-field p-col-12 p-md-4">
+                        <p:outputLabel value="Sexo  "/>
+                        <p:selectOneMenu id="labeledSexo" value="#{alunoManagerBean.aluno.sexo}" label="Always Show Label"  required="true" requiredMessage="Tem que Preecher Sim">
+                            <f:selectItem   itemLabel="Selecione" itemValue="#{null}"/>
+                            <f:selectItems value="#{alunoManagerBean.sexo}" />
+                        </p:selectOneMenu>
+                    </div>
+
+                </center>
+
+                <br/>
+
+                <center>
+                    <p:outputLabel value="Digite a matricula do aluno: "/>
+                    <p:inputText value="#{alunoManagerBean.aluno.matricula}" required="true" requiredMessage="Tem que Preecher Sim"/>
+
+                </center>
+                
+                <br/>
+
+                <center>
+                    <p:outputLabel value="Digite o curso do aluno: "/>
+                    <p:inputText value="#{alunoManagerBean.aluno.curso}" required="true" requiredMessage="Tem que Preecher Sim"/>
+
+                </center>
+
+                <br/>
+
+                <center>
+                    <p:outputLabel value="Digite o email do aluno: "/>
+                    <p:inputText value="#{alunoManagerBean.aluno.email}" required="true" requiredMessage="Tem que Preecher Sim"/>
+
+                </center>
+
+
+
+                <center><p:commandButton value="Cadastrar" icon="ui-icon-plus" actionListener="#{alunoManagerBean.salvar(alunoManagerBean.aluno)}" update="@form" /></center>
+
+            </p:panel>
+
+            <br/>
+
+            <center>
+                <p:button value="Pagina Inicial" href="inicio.xhtml" icon="ui-icon-left" />
+            </center>
+
+            <br/>
+
+
+        </h:form>
+
+
+
+
+    </h:body>
+
+</html>
+
